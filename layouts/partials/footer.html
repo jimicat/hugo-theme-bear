@@ -1,1 +1,16 @@
-{{ if ne .Site.Params.hideMadeWithLine true }}Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>{{ end }}
+{{ if ne .Site.Params.hideMadeWithLine true }}
+
+<hr>
+
+<div class="footer-text">
+    <div>{{- (site.Copyright | markdownify) | default (printf "© %d %s" now.Year site.Title) -}}</div>
+    <div><a href="mailto:941104c@gmail.com">Email</a></div>
+    <div>Based on <a href="https://bearblog.dev/">BearBlog</a></div>
+    <div class="rss">
+        <a href="{{ .Site.BaseURL }}index.xml">
+          <img src="/images/rss.png" alt="Subscribe to RSS Feed">
+        </a>
+      </div>
+</div>
+
+{{ end }}
